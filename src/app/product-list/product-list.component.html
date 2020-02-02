@@ -1,21 +1,25 @@
-<h2>Products</h2>
+<h1>Products</h1>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products" style="float: left" >
 
   <h3>
     <a [title]="product.name + ' details'" [routerLink]="['/products', product.productId]" routerLinkActive="active">
       {{ product.name }}
     </a>
   </h3>
-  <p *ngIf="product.price">
+
+  <h4>
+    <p *ngIf="product.price" >
     Price: {{ product.price }}
   </p>
+  </h4>
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
+  <p *ngIf="product.image">
+     <img [src]="product.image" height="200px" width="350px" hspace="20px" >
   </p>
 
-  <button (click)="share()">
+
+  <button (click)="share()" width="30px" height="25px"  style="float: left" >
     Share
   </button>
 
@@ -23,4 +27,9 @@
     [product]="product"
     (notify)="onNotify()">
   </app-product-alerts>
+  <br>
+
 </div>
+
+
+

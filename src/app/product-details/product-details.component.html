@@ -4,6 +4,7 @@
 
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
+  <img [src]="product.image" height="300px" width="400">
   <p>{{ product.description }}</p>
 
   <button (click)="addToCart(product)">Buy</button>
